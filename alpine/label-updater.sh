@@ -3,10 +3,6 @@ PODIP=`hostname -i`
 echo podIP $PODIP
 kubectl label --overwrite pod $HOSTNAME podIP="$PODIP"
 
-if [ "$SENTINEL" ]; then
-    exit
-fi
-
 RUNID=""
 
 # Only sets AUTH if the ENV var REDIS_PASS is set.
